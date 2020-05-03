@@ -1,0 +1,12 @@
+#!/bin/bash 
+#get the date
+date=$(date)
+topic="$1"
+
+filename="${HOME}/Documents/Repo/linux-pluralsight/${topic}notes.txt"
+
+read -p "Your note: " note
+
+echo "$date: $note" >> "$filename"
+
+echo "Note '$note' saved in $filename"
