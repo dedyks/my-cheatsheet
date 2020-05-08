@@ -1,0 +1,67 @@
+//drain all current  pod on node
+kubectl drain node-1
+--ignore-daemonsets
+
+//make no pod to scheduled on node
+kubectl cordon node-2
+kubectl uncordon node-2
+
+//get the list of nodes the pods are placed on
+kubectl get pods -o wide' and
+
+kubeadm upgrade plan
+
+apt-get upgrade -y kubeadm-1.12.0--00
+
+kubeadm upgrade apply v1.12.0
+
+// to upgrade the kubelet on the master node
+apt install kubelet=1.17.0-00
+apt-get upgrade -y kubelet=1.12.0--0
+
+//ssh to worker node to manually update kubelet
+ssh node01
+
+kubeadm upgrade node config --kubelet-version
+
+systemctl restart kubelet
+
+apt-mark unhold kubelet && apt-get update && apt-get install -y kubelet=1.17.0-00 && apt-mark hold kubelet
+
+apt-mark unhold kubelet && apt-get update && apt-get install -y kubelet=1.14.0-00 && apt-mark hold kubelet
+
+apt-mark unhold kubelet kubectl && \
+apt-get update && apt-get install -y kubelet=1.17.0-00 kubectl=1.17.0-00 && \
+apt-mark hold kubelet kubectl
+
+apt-get update && \
+apt-get install -y --allow-change-held-packages kubelet=1.17.0-00 kubectl=1.17.0-00
+
+//backup all
+kubectl get all --all-namespace -o yaml > backup-all.yaml
+
+ kubectl logs etcd-master -n kube-system or check the ETCD pod kubectl describe pod etcd-master -n kube-system
+
+//check etcd version
+kubectl describe pod etcd-master -n kube-system
+
+//backup cluster
+ETCDCTL_API=3 etcdctl
+--endpoints=https://[127.0.0.1]:2379
+--cacert=/etc/kubernetes/pki/etcd/ca.crt
+--cert=/etc/kubernetes/pki/etcd/server.crt
+--key=/etc/kubernetes/pki/etcd/server.key
+snapshot save /tmp/snapshot-pre-boot.db
+
+//restore cluster
+ETCDCTL_API=3 etcdctl --endpoints=https://[127.0.0.1]:2379 --cacert=/etc/kubernetes/pki/etcd/ca.crt \
+     --name=master \
+     --cert=/etc/kubernetes/pki/etcd/server.crt --key=/etc/kubernetes/pki/etcd/server.key \
+     --data-dir /var/lib/etcd-from-backup \
+     --initial-cluster=master=https://127.0.0.1:2380 \
+     --initial-cluster-token etcd-cluster-1 \
+     --initial-advertise-peer-urls=https://127.0.0.1:2380 \
+     snapshot restore /tmp/snapshot-pre-boot.db
+
+//backup and restore check this
+https://github.com/mmumshad/kubernetes-the-hard-way/blob/master/practice-questions-answers/cluster-maintenance/backup-etcd/etcd-backup-and-restore.md

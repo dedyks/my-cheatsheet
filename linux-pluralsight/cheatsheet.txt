@@ -1,0 +1,22 @@
+i="mytxt.txt
+
+# first occurance
+echo ${i/txt/jpg}               = myjpg.txt
+
+# last occurance
+
+echo ${i/%txt/jpg}               = mytxt.jpg
+
+# every occurance
+echo ${i//txt/jpg}               = myjpg.jpg
+
+# remove from last
+echo ${i%txt}                    = mytxt.
+
+# remove from first, nothing happer because doest start with txt
+echo ${i#txt}                    = mytxt.txt
+
+// validation for digit
+if [[ $VAR =~ '^[0-9]+$' ]]; then
+    execute code
+fi

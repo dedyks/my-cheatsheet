@@ -1,5 +1,6 @@
-Thu Apr 30 15:02:59 WIB 2020: hehe
-Thu Apr 30 15:04:18 WIB 2020: 
-Thu Apr 30 15:05:20 WIB 2020: lah
-Thu Apr 30 15:06:42 WIB 2020: 
-Fri May  1 17:20:11 WIB 2020: code now
+Sun May  3 16:05:27 WIB 2020: hehehe
+Sun May  3 16:07:30 WIB 2020: Note 'hehehe' saved in /Users/dedy/Documents/Repo/my-cheatsheet/linux-pluralsight/notes.txt
+Sun May  3 16:12:52 WIB 2020: hehe
+Sun May  3 16:13:21 WIB 2020: 22
+Sun May  3 16:15:17 WIB 2020: ads
+Sun May  3 16:16:47 WIB 2020: asdf

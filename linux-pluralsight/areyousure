@@ -1,0 +1,20 @@
+#!/bin/bash
+
+echo -n "are you sure ?(Y/N)"
+
+answered=
+
+while [[ ! $answered ]]; do
+  #statements
+  read -r -n 1 answer -p "your answer:"
+
+  if [[ $answer = [Yy] ]]; then
+    #statements
+    answered="yes"
+  elif [[ $answer = [Nn] ]]; then
+    #statements
+    answered="no"
+  fi
+done
+
+printf "you answer %s" $answered

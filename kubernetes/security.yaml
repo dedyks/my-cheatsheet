@@ -1,0 +1,17 @@
+cat /etc/kubernetes/manifests/kube-apiserver.yaml
+
+//open certificate
+openssl x509 -in /etc/kubernetes/pki/apiserver.crt -text -noout
+
+//to see Logs with kubectl
+kubectl logs etcd-master
+
+//to see logs with docker
+docker ps
+docker logs 2323D
+
+// get list of certificate
+kubectl get csr
+
+//approve certificate
+kubectl certificate approve <name>

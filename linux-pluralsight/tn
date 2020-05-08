@@ -1,12 +1,17 @@
-#!/bin/bash 
+#!/bin/bash
 #get the date
 date=$(date)
 topic="$1"
-
-filename="${HOME}/Documents/Repo/linux-pluralsight/${topic}notes.txt"
+pwddata="${PWD}"
+filename="${pwddata}/${topic}notes.txt"
 
 read -p "Your note: " note
 
-echo "$date: $note" >> "$filename"
+if [[ $note ]]; then
+  #statements
+  echo "$date: $note" >> "$filename"
+  echo "Note '$note' saved in $filename"
 
-echo "Note '$note' saved in $filename"
+else  #statements
+  echo "no input" 1>&2
+fi
