@@ -15,3 +15,9 @@ kubectl get csr
 
 //approve certificate
 kubectl certificate approve <name>
+
+//extract yaml of certificate request
+kubectl get csr agent-smith -o yaml
+
+//change context to user prod-user in cluster production
+kubectl config use-context prod-user@production

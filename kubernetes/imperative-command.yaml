@@ -1,0 +1,2 @@
+//create pod with label
+kubectl run nginx-test --image=nginx:1.17.10 --labels="app=nginx,env=dev" --generator=run-pod/v1

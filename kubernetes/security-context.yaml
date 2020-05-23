@@ -1,0 +1,3 @@
+Run the command 'kubectl exec ubuntu-sleeper whoami' and count the number of pods.
+
+kubectl exec -it ubuntu-sleeper -- date -s '19 APR 2012 11:14:00'
