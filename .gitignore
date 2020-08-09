@@ -1,3 +1,4 @@
 
 terraform-aws-docker/.terraform/plugins/darwin_amd64/terraform-provider-aws_v2.70.0_x4
 learn-terraform-aws-instance/.terraform/plugins/darwin_amd64/terraform-provider-aws_v2.70.0_x4
+.terraform

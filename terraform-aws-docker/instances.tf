@@ -31,28 +31,3 @@ resource "aws_instance" "buddy" {
     Name = "buddy-master"
   }
 }
-
-
-resource "aws_instance" "ca-server" {
-  ami             = "ami-063e3af9d2cc7fe94"
-  instance_type   = "t2.micro"
-  security_groups = ["${aws_security_group.terraform_buddy.name}"]
-  key_name        = "dedy-mac-air"
-
-  tags = {
-    Name = "ca-server",
-    Pic  = "dedy"
-  }
-}
-
-resource "aws_instance" "openvpn-server" {
-  ami             = "ami-063e3af9d2cc7fe94"
-  instance_type   = "t2.medium"
-  security_groups = ["${aws_security_group.terraform_buddy.name}"]
-  key_name        = "dedy-mac-air"
-
-  tags = {
-    Name = "openvpn-server",
-    Pic  = "dedy"
-  }
-}

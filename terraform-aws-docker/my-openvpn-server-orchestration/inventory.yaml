@@ -7,7 +7,7 @@ all:
         ec2-52-77-252-239.ap-southeast-1.compute.amazonaws.com:
           ansible_become: true
           ansible_user: ubuntu
-          ansible_host: 52.77.252.239
+          ansible_host: 54.179.69.210
           easy_rsa_ca_server_mode: true
           ansible_python_interpreter: /usr/bin/python3
     openvpn_server:
@@ -16,5 +16,5 @@ all:
           ansible_python_interpreter: /usr/bin/python3
           ansible_become: true
           ansible_user: ubuntu
-          ansible_host: 18.138.232.225
-          openvpn_server_ip_address: 18.138.232.225
+          ansible_host: 18.141.221.118
+          openvpn_server_ip_address: 18.141.221.118
